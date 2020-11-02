@@ -35,8 +35,7 @@ export const NavbarData = [
 {
     title:'Support',
     path: '/support',
-    icon: <FcIcons.FcSupport />,
+    icon: <FaIcons.FaQuestion />,
     cName: 'nav-text'
 }
-
 ]

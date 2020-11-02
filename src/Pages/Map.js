@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import L from 'leaflet';
+// import "../Css/leaflet.css"
+
 
 function Map() {
-    return (
-        <div className ='Map'>
-            <h1>Im at Map</h1>
-        </div>
-    )
+
+  useEffect(() => {
+    
+    // create map
+    L.map('map', {
+      center: [37.235, -115.811111],
+      zoom: 16,
+      layers: [
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+          attribution:
+            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }),
+      ]
+    });
+  }, []);
+
+  return <div id="map" ></div>
 }
 
-export default Map
+export default Map;
